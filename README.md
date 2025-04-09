@@ -1,5 +1,7 @@
 # SheetsTuner
 
+![Version](https://img.shields.io/badge/version-1.0.0-blue.svg?cacheSeconds=2592000)
+
 SheetsTuner is a Google Sheets container-bound script that allows you to fine-tune LLMs (Large Language Models) on Vertex AI directly from your spreadsheet.
 
 ## Overview
@@ -34,19 +36,13 @@ For a detailed explanation of the technique used in this project, check out this
 
 1. Clone this repository
 2. Install dependencies:
-# Welcome to the boilerplate for Wurkspaces.dev's Google Apps Script projects 👋
+   ```sh
+   npm i && npm run install:husky
+   ```
 
-![Version](https://img.shields.io/badge/version-1.0.0-blue.svg?cacheSeconds=2592000)
+## Development
 
-> Boilerplate set up for Google Apps Script projects with Wurkspaces.dev stack
-
-## Install
-
-```sh
-npm i && npm run install:husky
-```
-
-## Running the local dev server with Vite
+### Running the local dev server with Vite
 
 Run the Vite server and the Tailwind server in parallel in different terminal windows:
 
@@ -60,15 +56,15 @@ npm run dev
 npm run build:css:watch
 ```
 
-## Formatting
+### Formatting
 
 The `npm run format` will run linting and pretty-printing with the `--fix` and `--write` options.
 
-## Managing Environments
+### Managing Environments
 
 This project is set up to be deployable to separate Google Apps Script projects acting as different environments. It works by copying relevant environmental files like `.clasp.json` from `env-mgt/<environment_name>` to the specified path (the root by default). Any number of files can be added to each environment. Configure the environment in the `env-mgt/ENV.js` file.
 
-## Bulding and deploying
+### Building and deploying
 
 To build the app for production, run:
 
@@ -85,13 +81,13 @@ npm run build:push
 
 The Apps Script code will be stored in a variable that executes an IIFE `lib` by default. Hence, to call an exported function from the bundled Apps Script code use `lib.<functionName>(args)` syntax.
 
-## Run tests
+### Run tests
 
 ```sh
 npm t
 ```
 
-## Git hooks
+### Git hooks
 
 If you ran `npm run install:husky`, you will have configured a `pre-commit` git hook. Every time you commit your code, it will run formatting and testing by executing `npm run format && npm t`.
 
