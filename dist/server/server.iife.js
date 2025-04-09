@@ -159,6 +159,7 @@ var lib_ = function(exports) {
     const dataIsOk = data.every((item) => item in UPLOAD_ROUTER);
     if (!dataIsOk)
       throw new Error(`Les données ${JSON.stringify(data)} sont invalides`);
+    breakdown();
     for (const item of data) {
       const route = UPLOAD_ROUTER[item];
       uploadToBucket(route.call(), route.filename, bucketName, saKey);

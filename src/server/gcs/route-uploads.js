@@ -1,5 +1,6 @@
 import { uploadToBucket } from './upload-to-bucket.js';
 import { exportJsonl } from '../finetuning/export-jsonl.js';
+import { breakdown } from '../server.js';
 
 /**
  * Configuration for different upload types
@@ -33,6 +34,7 @@ export function routeUploads(data, bucketName, saKey) {
   if (!dataIsOk)
     throw new Error(`Les données ${JSON.stringify(data)} sont invalides`);
 
+  breakdown();
 
   for (const item of data) {
     const route = UPLOAD_ROUTER[item];
