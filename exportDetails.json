@@ -1,0 +1,37 @@
+[
+  {
+    "name": "breakdown",
+    "parameters": []
+  },
+  {
+    "name": "exportJsonl",
+    "parameters": [
+      {
+        "name": "target",
+        "defaultValue": "training"
+      }
+    ]
+  },
+  {
+    "name": "onOpen",
+    "parameters": []
+  },
+  {
+    "name": "openSideBar",
+    "parameters": []
+  },
+  {
+    "name": "routeUploads",
+    "parameters": [
+      {
+        "name": "data"
+      },
+      {
+        "name": "bucketName"
+      },
+      {
+        "name": "saKey"
+      }
+    ]
+  }
+]

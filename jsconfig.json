@@ -1,0 +1,20 @@
+{
+  "compilerOptions": {
+    "module": "NodeNext",
+    "target": "ES6",
+    "checkJs": true,
+    "types": ["jest"],
+    "moduleResolution": "NodeNext"
+  },
+  "include": [
+    "src/**/*",
+    "tests/**/*",
+    "dist/server/**/*",
+    "dist/app.jss",
+    ".eslintrc.cjs",
+    "vite.config.js",
+    "tailwind.config.cjs",
+    "prettier.config.js"
+  ],
+  "exclude": ["dist", "node_modules"]
+}

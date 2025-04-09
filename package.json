@@ -1,0 +1,44 @@
+{
+  "name": "sheets-tune",
+  "private": true,
+  "version": "1.0.0",
+  "type": "module",
+  "scripts": {
+    "install:husky": "husky install && npx husky add .husky/pre-commit \"npm run format && npm t\"",
+    "mkreadme": "npx readme-md-generator",
+    "env:dev": "node ./env-mgt/set-env.js dev",
+    "env:uat": "node ./env-mgt/set-env.js uat",
+    "env:prod": "node ./env-mgt/set-env.js prod",
+    "dev": "vite",
+    "build:ui": "vite build",
+    "build:gas": "vite build --config vite.config.gas.js",
+    "build:push": "npm run build:gas && npm run build:ui && clasp push -f",
+    "build:css:watch": "npx tailwindcss -i ./src/client/assets/input.css -o ./src/client/assets/output.css --watch",
+    "lint": "npx eslint src/**/*.js dist/*.js",
+    "lint:fix": "npm run lint -- --fix",
+    "prettier": "npx prettier src/**/*.js dist/*.js --check",
+    "prettier:fix": "npm run prettier -- --write",
+    "format": "npm run prettier:fix && npm run lint:fix",
+    "test": "vitest",
+    "tree": "tree -I 'node_modules' -I '.git' --dirsfirst -a"
+  },
+  "devDependencies": {
+    "@babel/parser": "^7.27.0",
+    "@babel/traverse": "^7.27.0",
+    "@types/google-apps-script": "^1.0.97",
+    "daisyui": "^3.1.5",
+    "eslint": "^8.40.0",
+    "eslint-config-prettier": "^8.8.0",
+    "eslint-plugin-googleappsscript": "^1.0.4",
+    "husky": "^8.0.3",
+    "prettier": "^2.8.8",
+    "vite": "^4.2.0",
+    "vite-plugin-singlefile": "^0.13.5",
+    "vitest": "^2.1.4"
+  },
+  "dependencies": {
+    "@types/alpinejs": "^3.13.10",
+    "@wildhog/consolas": "^1.1.1",
+    "alpinejs": "^3.12.2"
+  }
+}
